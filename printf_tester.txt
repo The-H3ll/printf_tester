@@ -1,0 +1,68 @@
+My ft_printf can write a simple text
+My ft_printf can write a simple text with char
+My ft_printf can write a simple text with string
+My ft_printf can write a simple text with string and char L
+-2147483648 can print a simple number
+My ft_printf can write a simple text with string and M and -2147483648
+My ft_printf can write a simple text with string and M and -2147483648 and [0x10da6934a]
+My ft_printf can write a simple text with string and M and -2147483648 and [0x10da6934a] also 8b72
+My ft_printf can write a simple text with string and M and -2147483648 and [0x10da6934a] also 8b72 can he make ffff748e
+My ft_printf can write a simple text with string and M and -2147483648 and [0x10da6934a] also 8b72 can he make ffff748e 8B72 FFFF748E unsigned 4294967295 signed 2147483647
+test with flags [0] 0000035698
+test with flags [0] 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000035698
+test with flags [0] 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000035698
+test with flags [0] 035698
+test with flags [0] 35698
+test with flags [0] 35698
+test with flags [0] 35698 with signed int -000035698
+test with flags [0] 0000035698 with unsigned int 4294967295
+test with flags [0] 2147483647 with unsigned int 4294967295
+test with flags [-] signed int 35698
+test with flags [-] signed int -35698d
+test with flags [-] signed int 35698d -35698d
+test with flags [-] unsigned int 2147483647
+test with flags [-] unsigned int 2147483647
+test with flags [-] string My ft_printf
+test with flags [-] string My ft_printfs
+test with flags [-] string My ft_printfs
+test with flags [-] string My ft_printfs
+test with flags [-] string My ft_printf10s
+test with flags [-] char M
+test with flags [-] char Mc
+test with flags [-] char Mc
+test with flags [-] char M         
+test with flags [-] char M         c
+test with flags [-] char 0x10da6934a
+test with flags [-] char 0x10da6934a
+test with flags [-] char 0x10da6934a
+test with flags [-] char 0x10da6934ap
+test with flags [-] char 0x10da6934ap
+test with flags [-] unsigned int 4294967295u
+test with flags [-] unsigned int 4294967295u
+test with flags [-] unsigned int 4294967295
+test with flags [-] signed int 35698 signed int2 -35698 unsigned int 2147483647 string My ft_printf
+test with flags [-] signed int 35698d signed int2 -35698d unsigned int 2147483647u string My ft_printfs
+test with flags [-] signed int 35698d signed int2 -35698d unsigned int 2147483647u string My ft_printfs
+test with flags [-] signed int 35698d signed int2 -35698d unsigned int 2147483647u string My ft_printfs
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        s
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        sMM         
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        sM         McM         c
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        sM         McM         c 0x10da6934a
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        sM         McM         c 0x10da6934ap
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        sM         McM         c0x10da6934ap
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        sM         McM         c0x10da6934ap
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647u string My ft_printf        sM         McM         c0x10da6934a         p
+test with flags [-] signed int 35698     d signed int2 -35698  d unsigned int 2147483647uu string My ft_printf        sM         McM          c0x10da6934a                                                                                         p0x10da6934a
+test with flags [*] and [0] 35698
+test with flags [*] and [0] 35698
+test with flags [*] and [0] 35698
+test with flags [*] and [0] 35698d
+test with flags [*] and [0] 0000035698d-35698
+test with flags [*] and [0] 2147483647
+test with flags [*] and [0] 2147483647
+test with flags [*] and [0] 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002147483647d
+test with flags [*] and [0] -35698d
+test with flags [*] and [0] -000035698d
+test with flags [*] and [0] -000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000035698d
+test with flags [*] and [0] -0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000035698d
+test with flags [*] and [0] 0000035698d-000035698
