@@ -6,7 +6,7 @@
 /*   By: molabhai <molabhai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 21:15:57 by molabhai          #+#    #+#             */
-/*   Updated: 2019/11/15 19:42:08 by molabhai         ###   ########.fr       */
+/*   Updated: 2019/11/15 23:04:28 by molabhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 void	print_l(char *l)
 {
@@ -399,5 +398,143 @@ int		main(void)
 	fprintf(file, "test with flags [*] and [-] %0*X%010XX %-10x hexadecimal int %-*Xxd%-10xX  signed int %-*dd char %-*c c %-*c string %-*s%-*s unsigned int %-*ud%ud\n", 10, num, hexa1, hexa, 10, hexa1, hexa, 10, hexa1, 10, x, 1, c, 12, s, 13, s, 10, num, num);
 	ft_printf("test with flags [*] and [-] %0*X%010XX %-10x hexadecimal int %-*Xxd%-10xX  signed int %-*dd char %-*c c %-*c string %-*s%-*s unsigned int %-*ud%ud\n", 10, num, hexa1, hexa, 10, hexa1, hexa, 10, hexa1, 10, x, 1, c, 12, s, 13, s, 10, num, num);
 
+	fprintf(file, "test with [width_field] %1d\n", hexa);
+	ft_printf("test with [width_field] %1d\n", hexa);
+	
+	fprintf(file, "test with [width_field] d%1dd\n", hexa);
+	ft_printf("test with [width_field] d%1dd\n", hexa);
+	
+	fprintf(file, "test with [width_field] d%5dd\n", hexa);
+	ft_printf("test with [width_field] d%5dd\n", hexa);
+
+	fprintf(file, "test with [width_field] d%10d%0d\n", hexa, hexa1);
+	ft_printf("test with [width_field] d%10d%0d\n", hexa, hexa1);
+
+	fprintf(file, "test with [width_field] %1x\n", hexa);
+	ft_printf("test with [width_field] %1x\n", hexa);
+	
+	fprintf(file, "test with [width_field] %4xX\n", hexa);
+	ft_printf("test with [width_field] %4xX\n", hexa);
+	
+	fprintf(file, "test with [width_field] %5x%1X\n", hexa, hexa1);
+	ft_printf("test with [width_field] %5x%1X\n", hexa, hexa1);
+
+	fprintf(file, "test with [width_field] X%10xx%1Xx\n", hexa, hexa1);
+	ft_printf("test with [width_field] X%10xx%1Xx\n", hexa, hexa1);
+
+	fprintf(file, "test with [width_field] %1p\n", s);
+	ft_printf("test with [width_field] %1p\n", s);
+	
+	fprintf(file, "test with [width_field] %5p\n", s);
+	ft_printf("test with [width_field] %5p\n", s);
+	
+	fprintf(file, "test with [width_field] %10p\n", s);
+	ft_printf("test with [width_field] %10p\n", s);
+
+	fprintf(file, "test with [width_field] %10pp\n", s);
+	ft_printf("test with [width_field] %10pp\n", s);
+
+	fprintf(file, "test with [width_field] p%10pp\n", s);
+	ft_printf("test with [width_field] p%10pp\n", s);
+
+	fprintf(file, "test with [width_field] p%100p%1p\n", s, s);
+	ft_printf("test with [width_field] p%100p%1p\n", s, s);
+	
+	fprintf(file, "test with [width_field] p%100p%1p\n", s, s);
+	ft_printf("test with [width_field] p%100p%1p\n", s, s);
+
+
+	fprintf(file, "test with [width_field] %1s\n", s);
+	ft_printf("test with [width_field] %1s\n", s);
+	
+	fprintf(file, "test with [width_field] %5s\n", s);
+	ft_printf("test with [width_field] %5s\n", s);
+	
+	fprintf(file, "test with [width_field] %10s\n", s);
+	ft_printf("test with [width_field] %10s\n", s);
+
+	fprintf(file, "test with [width_field] %10ss\n", s);
+	ft_printf("test with [width_field] %10ss\n", s);
+
+	fprintf(file, "test with [width_field] s%10ss\n", s);
+	ft_printf("test with [width_field] s%10ss\n", s);
+
+	fprintf(file, "test with [width_field] s%100s%1s\n", s, s);
+	ft_printf("test with [width_field] s%100s%1s\n", s, s);
+	
+	fprintf(file, "test with [width_field] s%100s%1s\n", s, s);
+	ft_printf("test with [width_field] s%100s%1s\n", s, s);
+
+	fprintf(file, "test with [width_field] s%100s%1sp%100p%1pX%10xx%1Xxnd%10d%0d\n", s, s, s, s, hexa, hexa1, hexa, hexa1);
+	ft_printf("test with [width_field] s%100s%1sp%100p%1pX%10xx%1Xxnd%10d%0d\n", s, s, s, s, hexa, hexa1, hexa, hexa1);
+	
+	fprintf(file, "test with [width_field] %*d\n", 1, hexa);
+	ft_printf("test with [width_field] %*d\n", 1, hexa);
+	
+	fprintf(file, "test with [width_field] d%*dd\n", 1, hexa);
+	ft_printf("test with [width_field] d%*dd\n", 1, hexa);
+	
+	fprintf(file, "test with [width_field] d%*dd\n", 5, hexa);
+	ft_printf("test with [width_field] d%*dd\n", 5, hexa);
+
+	fprintf(file, "test with [width_field] d%*d%*d\n", 10, hexa, 0, hexa1);
+	ft_printf("test with [width_field] d%*d%*d\n", 10, hexa, 0, hexa1);
+
+	fprintf(file, "test with [width_field] %*x\n", 1, hexa);
+	ft_printf("test with [width_field] %*x\n", 1, hexa);
+	
+	fprintf(file, "test with [width_field] %*xX\n", 4, hexa);
+	ft_printf("test with [width_field] %*xX\n", 4, hexa);
+	
+	fprintf(file, "test with [width_field] %*x%*X\n", 5, hexa, 1, hexa1);
+	ft_printf("test with [width_field] %*x%*X\n", 5, hexa, 1, hexa1);
+
+	fprintf(file, "test with [width_field] X%*xx%*Xx\n", 10, hexa, 1, hexa1);
+	ft_printf("test with [width_field] X%*xx%*Xx\n", 10, hexa, 1,hexa1);
+
+	fprintf(file, "test with [width_field] %*p\n", 1, s);
+	ft_printf("test with [width_field] %*p\n", 1, s);
+	
+	fprintf(file, "test with [width_field] %*p\n", 5, s);
+	ft_printf("test with [width_field] %*p\n", 5, s);
+	
+	fprintf(file, "test with [width_field] %*p\n", 10, s);
+	ft_printf("test with [width_field] %*p\n", 10, s);
+
+	fprintf(file, "test with [width_field] %*pp\n", 10, s);
+	ft_printf("test with [width_field] %*pp\n", 10, s);
+
+	fprintf(file, "test with [width_field] p%*pp\n", 10, s);
+	ft_printf("test with [width_field] p%*pp\n", 10, s);
+
+	fprintf(file, "test with [width_field] p%*p%*p\n", 100, s, 1, s);
+	ft_printf("test with [width_field] p%*p%*p\n", 100, s, 1, s);
+	
+	fprintf(file, "test with [width_field] p%*p%*p\n", 100, s, 1, s);
+	ft_printf("test with [width_field] p%*p%*p\n", 100, s, 1, s);
+
+	fprintf(file, "test with [width_field] %*s\n", 1, s);
+	ft_printf("test with [width_field] %*s\n", 1, s);
+	
+	fprintf(file, "test with [width_field] %*s\n", 5, s);
+	ft_printf("test with [width_field] %*s\n", 5, s);
+	
+	fprintf(file, "test with [width_field] %*s\n",10, s);
+	ft_printf("test with [width_field] %*s\n", 10, s);
+
+	fprintf(file, "test with [width_field] %*ss\n", 10,s);
+	ft_printf("test with [width_field] %*ss\n", 10,s);
+
+	fprintf(file, "test with [width_field] s%*ss\n", 10, s);
+	ft_printf("test with [width_field] s%*ss\n", 10, s);
+
+	fprintf(file, "test with [width_field] s%*s%*s\n", 100, s, 1, s);
+	ft_printf("test with [width_field] s%*s%*s\n", 100, s, 1, s);
+	
+	fprintf(file, "test with [width_field] s%*s%*sp%*p%*pX%*xx%*Xxnd%*d%*d\n", 100 , s, 1, s, 100, s,1, s, 10, hexa, 1,  hexa1, 10, hexa, 0 ,hexa1);
+	ft_printf("test with [width_field] s%*s%*sp%*p%*pX%*xx%*Xxnd%*d%*d\n", 100 , s, 1, s, 100, s,1, s, 10, hexa, 1,  hexa1, 10, hexa, 0 ,hexa1);
+	
+	
+	
 	return (0);
 }
