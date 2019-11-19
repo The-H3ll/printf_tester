@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ptrintf_tester.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: molabhai <molabhai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: molabhai <molabhai@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 21:15:57 by molabhai          #+#    #+#             */
-/*   Updated: 2019/11/15 23:04:28 by molabhai         ###   ########.fr       */
+/*   Updated: 2019/11/19 10:23:52 by molabhai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,8 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
-void	print_l(char *l)
-{
-	int i;
-
-	i = 0;
-	while (l[i] != '\0')
-	{
-		write(1, &l[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-}
 
 int		main(void)
 {
@@ -34,7 +23,6 @@ int		main(void)
 	char *s = "My ft_printf";
 	char c, x;
 	int number = -2147483648;
-	//unsigned int nmbr;
 	int hexa = 35698;
 	int hexa1 = -35698;
 	unsigned int num = 4294967295;
@@ -533,8 +521,573 @@ int		main(void)
 	
 	fprintf(file, "test with [width_field] s%*s%*sp%*p%*pX%*xx%*Xxnd%*d%*d\n", 100 , s, 1, s, 100, s,1, s, 10, hexa, 1,  hexa1, 10, hexa, 0 ,hexa1);
 	ft_printf("test with [width_field] s%*s%*sp%*p%*pX%*xx%*Xxnd%*d%*d\n", 100 , s, 1, s, 100, s,1, s, 10, hexa, 1,  hexa1, 10, hexa, 0 ,hexa1);
+
+	fprintf(file, "test with [.] %1.1d\n", hexa);
+	ft_printf("test with [.] %1.1d\n", hexa);
+
+	fprintf(file, "test with [.] %0.1d\n", hexa);
+	ft_printf("test with [.] %0.1d\n", hexa);
+
+	fprintf(file, "test with [.] %1.0d\n", hexa);
+	ft_printf("test with [.] %1.0d\n", hexa);
+
+	fprintf(file, "test with [.] %0.5d\n", hexa);
+	ft_printf("test with [.] %0.5d\n", hexa);
+
+	fprintf(file, "test with [.] %5.0d\n", hexa);
+	ft_printf("test with [.] %5.0d\n", hexa);
+
+	fprintf(file, "test with [.] %5.5d\n", hexa);
+	ft_printf("test with [.] %5.5d\n", hexa);
+	
+	fprintf(file, "test with [.] %10.5d\n", hexa);
+	ft_printf("test with [.] %10.5d\n", hexa);
+	
+	fprintf(file, "test with [.] %5.10d\n", hexa);
+	ft_printf("test with [.] %5.10d\n", hexa);
+
+	fprintf(file, "test with [.] %6.10d\n", hexa);
+	ft_printf("test with [.] %6.10d\n", hexa);
+	
+	fprintf(file, "test with [.] %10.6d\n", hexa);
+	ft_printf("test with [.] %10.6d\n", hexa);
+
+	fprintf(file, "test with [.] %1.1d\n", hexa1);
+	ft_printf("test with [.] %1.1d\n", hexa1);
+
+	fprintf(file, "test with [.] %0.1d\n", hexa1);
+	ft_printf("test with [.] %0.1d\n", hexa1);
+
+	fprintf(file, "test with [.] %1.0d\n", hexa1);
+	ft_printf("test with [.] %1.0d\n", hexa1);
+
+	fprintf(file, "test with [.] %0.5d\n", hexa1);
+	ft_printf("test with [.] %0.5d\n", hexa1);
+
+	fprintf(file, "test with || [.] %5.0d\n", hexa1);
+	ft_printf("test with || [.] %5.0d\n", hexa1);
+
+	fprintf(file, "test with [.] %5.5d\n", hexa1);
+	ft_printf("test with [.] %5.5d\n", hexa1);
+	
+	fprintf(file, "test with [.] %10.5d\n", hexa1);
+	ft_printf("test with [.] %10.5d\n", hexa1);
+	
+	fprintf(file, "test with [.] %5.10d\n", hexa1);
+	ft_printf("test with [.] %5.10d\n", hexa1);
+
+	fprintf(file, "test with [.] %6.10d\n", hexa1);
+	ft_printf("test with [.] %6.10d\n", hexa1);
+	
+	fprintf(file, "test with [.] %10.6d\n", hexa1);
+	ft_printf("test with [.] %10.6d\n", hexa1);
+
+	fprintf(file, "test with [.] %1.1d%1.1d\n", hexa1, hexa);
+	ft_printf("test with [.] %1.1d%1.1d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %0.1d%0.1d\n", hexa1, hexa);
+	ft_printf("test with [.] %0.1d%0.1d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %5.1d%5.1d\n", hexa1, hexa);
+	ft_printf("test with [.] %5.1d%5.1d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %1.5d%1.5d\n", hexa1, hexa);
+	ft_printf("test with [.] %1.5d%1.5d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %5.5d%5.5d\n", hexa1, hexa);
+	ft_printf("test with [.] %5.5d%5.5d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %10.5d%10.5d\n", hexa1, hexa);
+	ft_printf("test with [.] %10.5d%10.5d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %5.10d%5.10d\n", hexa1, hexa);
+	ft_printf("test with [.] %5.10d%5.10d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] || %10.10ddd%10.10ddd\n", hexa1, hexa);
+	ft_printf("test with [.] || %10.10ddd%10.10ddd\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %1.100ddd%1.100ddd\n", hexa1, hexa);
+	ft_printf("test with [.] %1.100ddd%1.100ddd\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %.1d\n", hexa);
+	ft_printf("test with [.] %.1d\n", hexa);
+
+	fprintf(file, "test with [.] %.5d\n", hexa);
+	ft_printf("test with [.] %.5d\n", hexa);
+
+	fprintf(file, "test with [.] %.0d\n", hexa);
+	ft_printf("test with [.] %.0d\n", hexa);
+
+	fprintf(file, "test with [.] %.10d\n", hexa);
+	ft_printf("test with [.] %.10d\n", hexa);
+
+	fprintf(file, "test with [.] %.6d\n", hexa);
+	ft_printf("test with [.] %.6d\n", hexa);
+
+	fprintf(file, "test with [.] %.1d\n", hexa1);
+	ft_printf("test with [.] %.1d\n", hexa1);
+
+	fprintf(file, "test with [.] %.0d\n", hexa1);
+	ft_printf("test with [.] %.0d\n", hexa1);
+
+	fprintf(file, "test with [.] %.5d\n", hexa1);
+	ft_printf("test with [.] %.5d\n", hexa1);
+
+	fprintf(file, "test with [.] %.10d\n", hexa1);
+	ft_printf("test with [.] %.10d\n", hexa1);
+
+	fprintf(file, "test with [.] %.10d\n", hexa1);
+	ft_printf("test with [.] %.10d\n", hexa1);
+	
+	fprintf(file, "test with [.] %.6d\n", hexa1);
+	ft_printf("test with [.] %.6d\n", hexa1);
+
+	fprintf(file, "test with [.] %.1d%.1d\n", hexa1, hexa);
+	ft_printf("test with [.] %.1d%.1d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %.5d%.5d\n", hexa1, hexa);
+	ft_printf("test with [.] %.5d%.5d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %.10d%.10d\n", hexa1, hexa);
+	ft_printf("test with [.] %.10d%.10d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %.100ddd%.100ddd\n", hexa1, hexa);
+	ft_printf("test with [.] %.100ddd%.100ddd\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %.1x\n", hexa);
+	ft_printf("test with [.] %.1x\n", hexa);
+
+	fprintf(file, "test with [.] %.5x\n", hexa);
+	ft_printf("test with [.] %.5x\n", hexa);
+
+	fprintf(file, "test with [.] %.0x\n", hexa);
+	ft_printf("test with [.] %.0x\n", hexa);
+
+	fprintf(file, "test with [.] %.10x\n", hexa);
+	ft_printf("test with [.] %.10x\n", hexa);
+
+	fprintf(file, "test with [.] %.6x\n", hexa);
+	ft_printf("test with [.] %.6x\n", hexa);
+
+	fprintf(file, "test with [.] %.1x\n", hexa1);
+	ft_printf("test with [.] %.1x\n", hexa1);
+
+	fprintf(file, "test with [.] %.0x\n", hexa1);
+	ft_printf("test with [.] %.0x\n", hexa1);
+
+	fprintf(file, "test with [.] %.5x\n", hexa1);
+	ft_printf("test with [.] %.5x\n", hexa1);
+
+	fprintf(file, "test with [.] %.10x\n", hexa1);
+	ft_printf("test with [.] %.10x\n", hexa1);
+
+	fprintf(file, "test with [.] %.10x\n", hexa1);
+	ft_printf("test with [.] %.10x\n", hexa1);
+	
+	fprintf(file, "test with [.] %.6x\n", hexa1);
+	ft_printf("test with [.] %.6x\n", hexa1);
+
+	fprintf(file, "test with [.] %.1x%.1d\n", hexa1, hexa);
+	ft_printf("test with [.] %.1x%.1d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %.5x%.5d\n", hexa1, hexa);
+	ft_printf("test with [.] %.5x%.5d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %.10x%.10d\n", hexa1, hexa);
+	ft_printf("test with [.] %.10x%.10d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %.100xdd%.100ddd\n", hexa1, hexa);
+	ft_printf("test with [.] %.100xdd%.100ddd\n", hexa1, hexa);
 	
 	
+	fprintf(file, "test with [.] %1.1x\n", hexa);
+	ft_printf("test with [.] %1.1x\n", hexa);
+
+	fprintf(file, "test with [.] %0.1x\n", hexa);
+	ft_printf("test with [.] %0.1x\n", hexa);
+
+	fprintf(file, "test with [.] %1.0x\n", hexa);
+	ft_printf("test with [.] %1.0x\n", hexa);
+
+	fprintf(file, "test with [.] %0.5x\n", hexa);
+	ft_printf("test with [.] %0.5x\n", hexa);
+
+	fprintf(file, "test with [.] %5.0x\n", hexa);
+	ft_printf("test with [.] %5.0x\n", hexa);
+
+	fprintf(file, "test with [.] %5.5x\n", hexa);
+	ft_printf("test with [.] %5.5x\n", hexa);
 	
+	fprintf(file, "test with [.] %10.5x\n", hexa);
+	ft_printf("test with [.] %10.5x\n", hexa);
+	
+	fprintf(file, "test with [.] %5.10x\n", hexa);
+	ft_printf("test with [.] %5.10x\n", hexa);
+
+	fprintf(file, "test with [.] %6.10x\n", hexa);
+	ft_printf("test with [.] %6.10x\n", hexa);
+	
+	fprintf(file, "test with [.] %10.6x\n", hexa);
+	ft_printf("test with [.] %10.6x\n", hexa);
+
+
+	fprintf(file, "test with [.] %1.1x\n", hexa1);
+	ft_printf("test with [.] %1.1x\n", hexa1);
+
+	fprintf(file, "test with [.] %0.1x\n", hexa1);
+	ft_printf("test with [.] %0.1x\n", hexa1);
+
+	fprintf(file, "test with [.] %1.0x\n", hexa1);
+	ft_printf("test with [.] %1.0x\n", hexa1);
+
+	fprintf(file, "test with [.] %0.5x\n", hexa1);
+	ft_printf("test with [.] %0.5x\n", hexa1);
+
+	fprintf(file, "test with || [.] %5.0x\n", hexa1);
+	ft_printf("test with || [.] %5.0x\n", hexa1);
+
+	fprintf(file, "test with [.] %5.5x\n", hexa1);
+	ft_printf("test with [.] %5.5x\n", hexa1);
+	
+	fprintf(file, "test with [.] %10.5x\n", hexa1);
+	ft_printf("test with [.] %10.5x\n", hexa1);
+	
+	fprintf(file, "test with [.] %5.10x\n", hexa1);
+	ft_printf("test with [.] %5.10x\n", hexa1);
+
+	fprintf(file, "test with [.] %6.10x\n", hexa1);
+	ft_printf("test with [.] %6.10x\n", hexa1);
+	
+	fprintf(file, "test with [.] %10.6x\n", hexa1);
+	ft_printf("test with [.] %10.6x\n", hexa1);
+	
+
+	fprintf(file, "test with [.] %.1X\n", hexa);
+	ft_printf("test with [.] %.1X\n", hexa);
+
+	fprintf(file, "test with [.] %.5X\n", hexa);
+	ft_printf("test with [.] %.5X\n", hexa);
+
+	fprintf(file, "test with [.] %.0X\n", hexa);
+	ft_printf("test with [.] %.0X\n", hexa);
+
+	fprintf(file, "test with [.] %.10X\n", hexa);
+	ft_printf("test with [.] %.10X\n", hexa);
+
+	fprintf(file, "test with [.] %.6X\n", hexa);
+	ft_printf("test with [.] %.6X\n", hexa);
+
+	fprintf(file, "test with [.] %.1X\n", hexa1);
+	ft_printf("test with [.] %.1X\n", hexa1);
+
+	fprintf(file, "test with [.] %.0X\n", hexa1);
+	ft_printf("test with [.] %.0X\n", hexa1);
+
+	fprintf(file, "test with [.] %.5X\n", hexa1);
+	ft_printf("test with [.] %.5X\n", hexa1);
+
+	fprintf(file, "test with [.] %.10X\n", hexa1);
+	ft_printf("test with [.] %.10X\n", hexa1);
+
+	fprintf(file, "test with [.] %.10X\n", hexa1);
+	ft_printf("test with [.] %.10X\n", hexa1);
+	
+	fprintf(file, "test with [.] %.6X\n", hexa1);
+	ft_printf("test with [.] %.6X\n", hexa1);
+
+	fprintf(file, "test with [.] %.1X%.1d\n", hexa1, hexa);
+	ft_printf("test with [.] %.1X%.1d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %.5X%.5d\n", hexa1, hexa);
+	ft_printf("test with [.] %.5X%.5d\n", hexa1, hexa);
+
+	fprintf(file, "test with [.] %.10X%.10d\n", hexa1, hexa);
+	ft_printf("test with [.] %.10X%.10d\n", hexa1, hexa);
+	
+	fprintf(file, "test with [.] %.100Xdd%.100ddd\n", hexa1, hexa);
+	ft_printf("test with [.] %.100Xdd%.100ddd\n", hexa1, hexa);
+
+
+	fprintf(file, "test with [.] %1.1X\n", hexa1);
+	ft_printf("test with [.] %1.1X\n", hexa1);
+
+	fprintf(file, "test with [.] %0.1X\n", hexa1);
+	ft_printf("test with [.] %0.1X\n", hexa1);
+
+	fprintf(file, "test with [.] %1.0X\n", hexa1);
+	ft_printf("test with [.] %1.0X\n", hexa1);
+
+	fprintf(file, "test with [.] %0.5X\n", hexa1);
+	ft_printf("test with [.] %0.5X\n", hexa1);
+
+	fprintf(file, "test with || [.] %5.0X\n", hexa1);
+	ft_printf("test with || [.] %5.0X\n", hexa1);
+
+	fprintf(file, "test with [.] %5.5X\n", hexa1);
+	ft_printf("test with [.] %5.5X\n", hexa1);
+	
+	fprintf(file, "test with [.] %10.5X\n", hexa1);
+	ft_printf("test with [.] %10.5X\n", hexa1);
+	
+	fprintf(file, "test with [.] %5.10X\n", hexa1);
+	ft_printf("test with [.] %5.10X\n", hexa1);
+
+	fprintf(file, "test with [.] %6.10X\n", hexa1);
+	ft_printf("test with [.] %6.10X\n", hexa1);
+	
+	fprintf(file, "test with [.] %10.6X\n", hexa1);
+	ft_printf("test with [.] %10.6X\n", hexa1);
+	
+	fprintf(file, "test with [.] %1.1X\n", hexa);
+	ft_printf("test with [.] %1.1X\n", hexa);
+
+	fprintf(file, "test with [.] %0.1X\n", hexa);
+	ft_printf("test with [.] %0.1X\n", hexa);
+
+	fprintf(file, "test with [.] %1.0X\n", hexa);
+	ft_printf("test with [.] %1.0X\n", hexa);
+
+	fprintf(file, "test with [.] %0.5X\n", hexa);
+	ft_printf("test with [.] %0.5X\n", hexa);
+
+	fprintf(file, "test with [.] %5.0X\n", hexa);
+	ft_printf("test with [.] %5.0X\n", hexa);
+
+	fprintf(file, "test with [.] %5.5X\n", hexa);
+	ft_printf("test with [.] %5.5X\n", hexa);
+	
+	fprintf(file, "test with [.] %10.5X\n", hexa);
+	ft_printf("test with [.] %10.5X\n", hexa);
+	
+	fprintf(file, "test with [.] %5.10X\n", hexa);
+	ft_printf("test with [.] %5.10X\n", hexa);
+
+	fprintf(file, "test with [.] %6.10X\n", hexa);
+	ft_printf("test with [.] %6.10X\n", hexa);
+	
+	fprintf(file, "test with [.] %10.6X\n", hexa);
+	ft_printf("test with [.] %10.6X\n", hexa);
+
+	fprintf(file, "test with [.] %.1u\n", hexa);
+	ft_printf("test with [.] %.1u\n", hexa);
+
+	fprintf(file, "test with [.] %.5u\n", hexa);
+	ft_printf("test with [.] %.5u\n", hexa);
+
+	fprintf(file, "test with [.] %.0u\n", hexa);
+	ft_printf("test with [.] %.0u\n", hexa);
+
+	fprintf(file, "test with [.] %.10u\n", hexa);
+	ft_printf("test with [.] %.10u\n", hexa);
+
+	fprintf(file, "test with [.] %.6u\n", hexa);
+	ft_printf("test with [.] %.6u\n", hexa);
+
+	fprintf(file, "test with [.] %.1u\n", hexa);
+	ft_printf("test with [.] %.1u\n", hexa);
+
+	fprintf(file, "test with [.] %.0u\n", hexa);
+	ft_printf("test with [.] %.0u\n", hexa);
+
+	fprintf(file, "test with [.] %.5u\n", hexa);
+	ft_printf("test with [.] %.5u\n", hexa);
+
+	fprintf(file, "test with [.] %.10u\n", hexa);
+	ft_printf("test with [.] %.10u\n", hexa);
+
+	fprintf(file, "test with [.] %.10u\n", hexa);
+	ft_printf("test with [.] %.10u\n", hexa);
+	
+	fprintf(file, "test with [.] %.6u\n", hexa);
+	ft_printf("test with [.] %.6u\n", hexa);
+
+	fprintf(file, "test with [.] %.1u%.1d\n", hexa, hexa);
+	ft_printf("test with [.] %.1u%.1d\n", hexa, hexa);
+
+	fprintf(file, "test with [.] %.5u%.5d\n", hexa, hexa);
+	ft_printf("test with [.] %.5u%.5d\n", hexa, hexa);
+
+	fprintf(file, "test with [.] %.10u%.10d\n", hexa, hexa);
+	ft_printf("test with [.] %.10u%.10d\n", hexa, hexa);
+	
+	fprintf(file, "test with [.] %.100udd%.100ddd\n", hexa, hexa);
+	ft_printf("test with [.] %.100udd%.100ddd\n", hexa, hexa);
+	
+	fprintf(file, "test with [.] %1.1u\n", hexa);
+	ft_printf("test with [.] %1.1u\n", hexa);
+
+	fprintf(file, "test with [.] %0.1u\n", hexa);
+	ft_printf("test with [.] %0.1u\n", hexa);
+
+	fprintf(file, "test with [.] %1.0u\n", hexa);
+	ft_printf("test with [.] %1.0u\n", hexa);
+
+	fprintf(file, "test with [.] %0.5u\n", hexa);
+	ft_printf("test with [.] %0.5u\n", hexa);
+
+	fprintf(file, "test with [.] %5.0u\n", hexa);
+	ft_printf("test with [.] %5.0u\n", hexa);
+
+	fprintf(file, "test with [.] %5.5u\n", hexa);
+	ft_printf("test with [.] %5.5u\n", hexa);
+	
+	fprintf(file, "test with [.] %10.5u\n", hexa);
+	ft_printf("test with [.] %10.5u\n", hexa);
+	
+	fprintf(file, "test with [.] %5.10u\n", hexa);
+	ft_printf("test with [.] %5.10u\n", hexa);
+
+	fprintf(file, "test with [.] %6.10u\n", hexa);
+	ft_printf("test with [.] %6.10u\n", hexa);
+	
+	fprintf(file, "test with [.] %10.6u\n", hexa);
+	ft_printf("test with [.] %10.6u\n", hexa);
+
+	fprintf(file, "test with [.] %1.1u\n", nam);
+	ft_printf("test with [.] %1.1u\n", nam);
+
+	fprintf(file, "test with [.] %0.1u\n", nam);
+	ft_printf("test with [.] %0.1u\n", nam);
+
+	fprintf(file, "test with [.] %1.0u\n", nam);
+	ft_printf("test with [.] %1.0u\n", nam);
+
+	fprintf(file, "test with [.] %0.5u\n", nam);
+	ft_printf("test with [.] %0.5u\n", nam);
+
+	fprintf(file, "test with || [.] %5.0u\n", nam);
+	ft_printf("test with || [.] %5.0u\n", nam);
+
+	fprintf(file, "test with [.] %5.5u\n", nam);
+	ft_printf("test with [.] %5.5u\n", nam);
+	
+	fprintf(file, "test with [.] %10.5u\n", nam);
+	ft_printf("test with [.] %10.5u\n", nam);
+	
+	fprintf(file, "test with [.] %5.10u\n", nam);
+	ft_printf("test with [.] %5.10u\n", nam);
+
+	fprintf(file, "test with [.] %6.10u\n", nam);
+	ft_printf("test with [.] %6.10u\n", nam);
+	
+	fprintf(file, "test with [.] %10.6u\n", nam);
+	ft_printf("test with [.] %10.6u\n", nam);
+	
+	fprintf(file, "test with [.] %.1s\n", s);
+	ft_printf("test with [.] %.1s\n", s);
+
+	fprintf(file, "test with [.] %.5s\n", s);
+	ft_printf("test with [.] %.5s\n", s);
+
+	fprintf(file, "test with [.] %.0s\n", s);
+	ft_printf("test with [.] %.0s\n", s);
+
+	fprintf(file, "test with [.] %.10s\n", s);
+	ft_printf("test with [.] %.10s\n", s);
+
+	fprintf(file, "test with [.] %.6s\n", s);
+	ft_printf("test with [.] %.6s\n", s);
+
+	fprintf(file, "test with [.] %.1s\n", s);
+	ft_printf("test with [.] %.1s\n", s);
+
+	fprintf(file, "test with [.] %.0s\n", s);
+	ft_printf("test with [.] %.0s\n", s);
+
+	fprintf(file, "test with [.] %.5s\n", s);
+	ft_printf("test with [.] %.5s\n", s);
+
+	fprintf(file, "test with [.] %.10s\n", s);
+	ft_printf("test with [.] %.10s\n", s);
+
+	fprintf(file, "test with [.] %.10s\n", s);
+	ft_printf("test with [.] %.10s\n", s);
+	
+	fprintf(file, "test with [.] %.6s\n", s);
+	ft_printf("test with [.] %.6s\n", s);
+
+	fprintf(file, "test with [.] %.1s%.1d\n", s, hexa);
+	ft_printf("test with [.] %.1s%.1d\n", s, hexa);
+
+	fprintf(file, "test with [.] %.5s%.5d\n", s, hexa);
+	ft_printf("test with [.] %.5s%.5d\n", s, hexa);
+
+	fprintf(file, "test with [.] %.10s%.10d\n", s, hexa);
+	ft_printf("test with [.] %.10s%.10d\n", s, hexa);
+	
+	fprintf(file, "test with [.] %.100sdd%.100ddd\n", s, hexa);
+	ft_printf("test with [.] %.100sdd%.100ddd\n", s, hexa);
+	
+	fprintf(file, "test with [.] %1.1s\n", s);
+	ft_printf("test with [.] %1.1s\n", s);
+
+	fprintf(file, "test with [.] %1.0s\n", s);
+	ft_printf("test with [.] %1.0s\n", s);
+
+	fprintf(file, "test with [.] %5.0s\n", s);
+	ft_printf("test with [.] %5.0s\n", s);
+
+	fprintf(file, "test with [.] %5.5s\n", s);
+	ft_printf("test with [.] %5.5s\n", s);
+	
+	fprintf(file, "test with [.] %10.5s\n", s);
+	ft_printf("test with [.] %10.5s\n", s);
+	
+	fprintf(file, "test with [.] %5.10s\n", s);
+	ft_printf("test with [.] %5.10s\n", s);
+
+	fprintf(file, "test with [.] %6.10s\n", s);
+	ft_printf("test with [.] %6.10s\n", s);
+	
+	fprintf(file, "test with [.] %10.6s\n", s);
+	ft_printf("test with [.] %10.6s\n", s);
+
+	fprintf(file, "test with [.] %20.6s\n", s);
+	ft_printf("test with [.] %20.6s\n", s);
+	
+	fprintf(file, "%1.d\n", hexa);
+	ft_printf("%1.d\n", hexa);
+	
+	fprintf(file, "%5.d\n", hexa);
+	ft_printf("%5.d\n", hexa);
+		
+	fprintf(file, "%10.d\n", hexa);
+	ft_printf("%10.d\n", hexa);
+	
+	fprintf(file, "%1.x\n", hexa);
+	ft_printf("%1.x\n", hexa);
+	
+	fprintf(file, "%5.x\n", hexa);
+	ft_printf("%5.x\n", hexa);
+		
+	fprintf(file, "%10.x\n", hexa);
+	ft_printf("%10.x\n", hexa);
+	
+	fprintf(file, "%1.X\n", hexa);
+	ft_printf("%1.X\n", hexa);
+	
+	fprintf(file, "%5.X\n", hexa);
+	ft_printf("%5.X\n", hexa);
+		
+	fprintf(file, "%10.X\n", hexa);
+	ft_printf("%10.X\n", hexa);
+	
+	fprintf(file, "%1.u\n", hexa);
+	ft_printf("%1.u\n", hexa);
+	
+	fprintf(file, "%5.u\n", hexa);
+	ft_printf("%5.u\n", hexa);
+		
+	fprintf(file, "%10.u\n", hexa);
+	ft_printf("%10.u\n", hexa);
+	
+	fprintf(file, "%1.s\n", s);
+	ft_printf("%1.s\n", s);
+	
+	fprintf(file, "%5.s\n", s);
+	ft_printf("%5.s\n", s);
+		
+	fprintf(file, "%10.s\n", s);
+	ft_printf("%10.s\n", s); 
 	return (0);
 }
