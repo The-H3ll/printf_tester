@@ -86,8 +86,8 @@ int		main(void)
 	fprintf(file, "test with flags [0] %010d with unsigned int %010u\n", hexa, num);
 	ft_printf("test with flags [0] %010d with unsigned int %010u\n", hexa, num);
 
-	fprintf(file, "test with flags [0] %02147483648d with unsigned int %04294967296u\n", nam, num);
-	ft_printf("test with flags [0] %02147483648d with unsigned int %04294967296u\n", nam, num);
+//	fprintf(file, "test with flags [0] %02147483648d with unsigned int %04294967296u\n", nam, num);
+//	ft_printf("test with flags [0] %02147483648d with unsigned int %04294967296u\n", nam, num);
 
 	fprintf(file, "test with flags [0] %0x\n", hexa);
 	ft_printf("test with flags [0] %0x\n", hexa);
@@ -185,7 +185,8 @@ int		main(void)
 	fprintf(file, "test with flags [-] hexadecimal %-10xx\n", num);
 	ft_printf("test with flags [-] hexadecimal %-10xx\n", num);
 
-	fprintf(file, "test with flags [-] hexadecimal %-4294967295xx\n", num);
+
+/*	fprintf(file, "test with flags [-] hexadecimal %-4294967295xx\n", num);
 	ft_printf("test with flags [-] hexadecimal %-4294967295xx\n", num);
 
 	fprintf(file, "test with flags [-] hexadecimal %-4294967295xx\n", nam);
@@ -196,7 +197,7 @@ int		main(void)
 	
 	fprintf(file, "test with flags [-] hexadecimal %02147483648x%0214748xx\n", num, number);
 	ft_printf("test with flags [-] hexadecimal %02147483648x%0214748xx\n", num, number);
-	
+*/	
 	fprintf(file, "test with flags [-] signed int %-d signed int2 %-d unsigned int %-u string %-s\n", hexa, hexa1, nam, s);
 	ft_printf("test with flags [-] signed int %-d signed int2 %-d unsigned int %-u string %-s\n", hexa, hexa1, nam, s);
 	
